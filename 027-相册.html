@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>027-相册.html</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		.page>input,
+		.page>a{
+			position: fixed;
+			top: 0px;
+			width: 20%;
+			height:34px;
+		}
+		#ctr1,#ctr1 + a{
+			left: 0%;
+		}
+		#ctr2,#ctr2 + a{
+			left: 20%;
+		}
+		#ctr3,#ctr3 + a{
+			left: 40%;
+		}
+		#ctr4,#ctr4 + a{
+			left: 60%;
+		}
+		#ctr5,#ctr5 + a{
+			left: 80%;
+		}
+		.page>a{
+			z-index: 111;
+			text-align: center;
+			text-decoration: none;
+			font-size: 24px;
+			background-color: #2f2f2f;
+			color:#fff;
+		}
+		.page>input{
+			z-index: 999;
+			opacity: 0;
+		}
+		.page>input:checked + a{
+			color:#ff2700;
+		}
+		.page>input:hover + a{
+			background-color: #555;
+		}
+		.page>input:hover{
+			cursor: pointer;
+		}
+		html,body{
+			height: 100%;
+		}
+		.page{
+			height: 100%;
+			overflow: hidden;
+		}
+		.content{
+			height: 100%;
+			margin-top: 34px;
+			transition: all 0.5s;
+		}
+		.panel{
+			height: 100%;
+			column-count: 4;
+			column-gap: 1em;
+			padding: 1em;
+			box-sizing: border-box;
+		}
+		#ctr1:checked ~ .content{
+			transform: translateY(0%);
+		}
+		#ctr2:checked ~ .content{
+			transform: translateY(-100%);
+		}
+		#ctr3:checked ~ .content{
+			transform: translateY(-200%);
+		}
+		#ctr4:checked ~ .content{
+			transform: translateY(-300%);
+		}
+		#ctr5:checked ~ .content{
+			transform: translateY(-400%);
+		}
+		.image{
+			height: 100%;
+			border-radius: 4px;
+			overflow: hidden;
+		}
+		.image img{
+			width: 100%;
+			height: 100%;
+			border-radius: 4px;
+			transition: all 0.5s;
+		}
+		.image img:hover{
+			transform: scale(1.1);
+			cursor: pointer;
+		}
+		.image.w{
+			height: 30%;
+		}
+		.image.h{
+			height: 65%;
+		}
+		.mt{
+			margin-top: 5%;
+		}
+		#ctr1:checked ~ .content #page1,
+		#ctr2:checked ~ .content #page2,
+		#ctr3:checked ~ .content #page3,
+		#ctr4:checked ~ .content #page4,
+		#ctr5:checked ~ .content #page5
+		{
+			animation: sport 1s;
+		}
+		@keyframes sport{
+			from{
+				opacity: 0;
+			}
+			to{
+				opacity: 1;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="page">
+		<input type="radio" name="set" id="ctr1" checked>
+		<a href="#">致青春</a>
+		<input type="radio" name="set" id="ctr2">
+		<a href="#">辣眼睛</a>
+		<input type="radio" name="set" id="ctr3">
+		<a href="#">臭美</a>
+		<input type="radio" name="set" id="ctr4">
+		<a href="#">手拉手</a>
+		<input type="radio" name="set" id="ctr5">
+		<a href="#">诗和远方</a>
+		<div class="content">
+			<div class="panel" id="page1">
+				<div class="image w">
+					<img src="img/w01.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h01.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h02.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w02.jpg" alt="">
+				</div>
+				<div class="image w">
+					<img src="img/w03.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h03.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h04.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w04.jpg" alt="">
+				</div>
+			</div>
+			<div class="panel" id="page2">
+				<div class="image w">
+					<img src="img/w05.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h05.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h06.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w06.jpg" alt="">
+				</div>
+				<div class="image w">
+					<img src="img/w07.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h07.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h08.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w08.jpg" alt="">
+				</div>
+			</div>
+			<div class="panel" id="page3">
+				<div class="image w">
+					<img src="img/w09.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h09.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h10.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w10.jpg" alt="">
+				</div>
+				<div class="image w">
+					<img src="img/w11.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h11.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h12.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w12.jpg" alt="">
+				</div>
+			</div>
+			<div class="panel" id="page4">
+				<div class="image w">
+					<img src="img/w13.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h13.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h14.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w14.jpg" alt="">
+				</div>
+				<div class="image w">
+					<img src="img/w15.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h15.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h16.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w16.jpg" alt="">
+				</div>
+			</div>
+			<div class="panel" id="page5">
+				<div class="image w">
+					<img src="img/w17.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h17.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h18.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w18.jpg" alt="">
+				</div>
+				<div class="image w">
+					<img src="img/w19.jpg" alt="">
+				</div>
+				<div class="image h mt">
+					<img src="img/h19.jpg" alt="">
+				</div>
+				<div class="image h">
+					<img src="img/h20.jpg" alt="">
+				</div>
+				<div class="image w mt">
+					<img src="img/w20.jpg" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

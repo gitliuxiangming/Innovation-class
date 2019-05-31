@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>011-子选择器</title>
+	<style>
+		.father1>.son2{
+			color: red;
+		}
+		body{
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<div class="father1">
+		<div class="son1">
+			son1
+			<div class="son2">
+				son111111111
+			</div>
+		</div>
+		<div class="son2">
+			son2
+		</div>
+	</div>
+</body>
+<script>
+	window.onscroll = function(){
+		console.log(getScrollTop())
+	}
+</script>
+</html>
